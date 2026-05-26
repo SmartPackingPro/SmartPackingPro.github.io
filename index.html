@@ -46,8 +46,10 @@
   <!-- Critical: hide desktop nav on mobile BEFORE external CSS paints (prevents flash) -->
   <style>
     @media (max-width: 768px) {
-      .nav-links, .nav-cta { display: none !important; }
-      .mobile-menu-btn { display: block !important; }
+      /* Hide nav until JS opens it — :not(.menu-open) means it won't fight the open state */
+      .navbar:not(.menu-open) .nav-links,
+      .navbar:not(.menu-open) .nav-cta { display: none; }
+      .mobile-menu-btn { display: block; }
     }
   </style>
 

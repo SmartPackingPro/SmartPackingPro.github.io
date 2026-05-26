@@ -365,6 +365,88 @@ p {
   display: none;
   color: var(--text-on-dark);
   font-size: 1.5rem;
+  padding: 0.25rem;
+  border-radius: 8px;
+  transition: background var(--transition-fast);
+  z-index: 1010;
+  position: relative;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ── Mobile menu: open state ── */
+@media (max-width: 768px) {
+  /* Expand navbar height to accommodate dropdown */
+  .navbar.menu-open {
+    background: rgba(10, 14, 39, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    height: auto;
+  }
+
+  /* Show the nav links panel as a stacked dropdown */
+  .navbar.menu-open .nav-links {
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+    padding: 0.5rem 1.5rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    animation: menuSlideDown 0.25s ease forwards;
+  }
+
+  .navbar.menu-open .nav-links li {
+    width: 100%;
+  }
+
+  .navbar.menu-open .nav-links a {
+    display: block;
+    padding: 0.85rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgba(240, 249, 255, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    width: 100%;
+  }
+
+  .navbar.menu-open .nav-links li:last-child a {
+    border-bottom: none;
+  }
+
+  .navbar.menu-open .nav-links a:hover {
+    color: var(--primary);
+    padding-left: 0.5rem;
+    transition: all 0.15s ease;
+  }
+
+  /* Show CTA button in mobile menu */
+  .navbar.menu-open .nav-cta {
+    display: block !important;
+    padding: 0.75rem 1.5rem 1.25rem;
+    width: 100%;
+  }
+
+  .navbar.menu-open .nav-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Slide-down animation */
+  @keyframes menuSlideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* nav-container must be flex-wrap to allow links panel below */
+  .navbar.menu-open .nav-container {
+    flex-wrap: wrap;
+    height: auto;
+    align-items: center;
+    padding-top: 0;
+  }
 }
 
 /* ==========================================================================
