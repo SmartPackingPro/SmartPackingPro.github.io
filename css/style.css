@@ -60,10 +60,14 @@ html {
   color: var(--text-primary);
   background-color: var(--bg-section);
   line-height: 1.6;
+  /* Prevent horizontal overflow on mobile from creating scroll confusion */
+  overflow-x: hidden;
 }
 
 body {
   overflow-x: hidden;
+  /* Prevent mobile browsers rubber-band / snap-back behaviour */
+  overscroll-behavior-x: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -384,6 +388,9 @@ p {
   height: 100%;
   z-index: 0;
   overflow: hidden;
+  /* contain: layout+style ensures aurora bands CANNOT create
+     overflow outside this box — critical for mobile scroll fix */
+  contain: layout style;
   /* Deep vignette base so edges stay dark */
   background:
     radial-gradient(ellipse at 50% 110%, rgba(14, 165, 233, 0.08) 0%, transparent 60%),
@@ -558,97 +565,8 @@ p {
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
 .float-device { animation: float 4s ease-in-out infinite; }
 
-/* Floating Glassmorphic Badges */
-.glass-floating-card {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 0.75rem 1.25rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  z-index: 3;
-  pointer-events: none;
-  width: max-content;
-}
 
-.glass-floating-card.card-1 {
-  bottom: 8%;
-  left: -40px;
-  animation: floatGlass1 5s ease-in-out infinite alternate;
-}
 
-.glass-floating-card.card-2 {
-  top: 15%;
-  right: -50px;
-  animation: floatGlass2 6s ease-in-out infinite alternate;
-}
-
-.glass-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.glass-icon svg.text-green {
-  color: var(--green-success);
-}
-.glass-icon svg.text-gold {
-  color: var(--accent-gold);
-}
-
-.glass-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.glass-label {
-  font-weight: 700;
-  font-size: 0.85rem;
-  color: #fff;
-  line-height: 1.2;
-}
-
-.glass-sub {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.2;
-}
-
-/* Floating animation for glass cards */
-@keyframes floatGlass1 {
-  0% { transform: translateY(0) rotate(-2deg); }
-  100% { transform: translateY(-10px) rotate(1deg); }
-}
-
-@keyframes floatGlass2 {
-  0% { transform: translateY(0) rotate(3deg); }
-  100% { transform: translateY(-12px) rotate(-1deg); }
-}
-
-@media (max-width: 1024px) {
-  .glass-floating-card.card-1 {
-    left: -20px;
-  }
-  .glass-floating-card.card-2 {
-    right: -20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .glass-floating-card {
-    display: none;
-  }
-}
 
 /* WOW Effect: Pulse */
 @keyframes pulse-glow {

@@ -43,6 +43,14 @@
 
   <link rel="stylesheet" href="css/style.css">
 
+  <!-- Critical: hide desktop nav on mobile BEFORE external CSS paints (prevents flash) -->
+  <style>
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none !important; }
+      .mobile-menu-btn { display: block !important; }
+    }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -109,31 +117,10 @@
           <span class="text-small" style="color: rgba(255,255,255,0.6); margin-top: 0.5rem; display: block;">Start Free — 7-Day Pro Trial</span>
         </div>
       </div>
-      
+
       <div class="hero-visual reveal reveal-right">
         <div class="phone-mockup float-device">
           <img src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/0.Dashboard.jpg" alt="Smart Packing Pro Dashboard">
-        </div>
-        
-        <!-- Floating Glassmorphic Badges -->
-        <div class="glass-floating-card card-1">
-          <div class="glass-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-green"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          </div>
-          <div class="glass-text">
-            <span class="glass-label">Trip Packed</span>
-            <span class="glass-sub">All items ready</span>
-          </div>
-        </div>
-        
-        <div class="glass-floating-card card-2">
-          <div class="glass-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-gold"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-          </div>
-          <div class="glass-text">
-            <span class="glass-label">Trip Genius AI</span>
-            <span class="glass-sub">Optimal Itinerary</span>
-          </div>
         </div>
       </div>
     </div>
