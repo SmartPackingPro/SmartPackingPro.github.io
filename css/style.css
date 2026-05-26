@@ -375,7 +375,7 @@ p {
   overflow: hidden;
 }
 
-/* Animated Background Gradient */
+/* ===== Aurora Borealis Background Effect ===== */
 .hero-bg {
   position: absolute;
   top: 0;
@@ -384,58 +384,123 @@ p {
   height: 100%;
   z-index: 0;
   overflow: hidden;
-  background: radial-gradient(circle at 15% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 85% 30%, rgba(249, 115, 22, 0.08) 0%, transparent 50%);
+  /* Deep vignette base so edges stay dark */
+  background:
+    radial-gradient(ellipse at 50% 110%, rgba(14, 165, 233, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 0% 100%, rgba(6, 182, 212, 0.06) 0%, transparent 50%);
 }
 
-.glowing-blob {
+/* Aurora band base */
+.aurora-band {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.18;
-  mix-blend-mode: screen;
+  left: -30%;
+  width: 160%;
   pointer-events: none;
-  will-change: transform;
+  will-change: transform, opacity;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  filter: blur(60px);
 }
 
-.blob-1 {
-  top: -10%;
-  left: -10%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, var(--primary) 0%, rgba(14, 165, 233, 0) 70%);
-  animation: floatBlob1 15s ease-in-out infinite alternate;
+/* Band 1 — Teal / Cyan, sweeps from lower-left */
+.aurora-1 {
+  top: 5%;
+  height: 260px;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(6, 182, 212, 0.0) 20%,
+    rgba(6, 182, 212, 0.28) 40%,
+    rgba(20, 184, 166, 0.22) 55%,
+    rgba(6, 182, 212, 0.0) 75%,
+    transparent 100%
+  );
+  animation: aurora-drift-1 18s ease-in-out infinite;
+  animation-delay: 0s;
 }
 
-.blob-2 {
-  bottom: -10%;
-  right: -5%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, var(--accent) 0%, rgba(249, 115, 22, 0) 70%);
-  animation: floatBlob2 18s ease-in-out infinite alternate;
+/* Band 2 — Emerald / Green, wider & slower */
+.aurora-2 {
+  top: 22%;
+  height: 300px;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(16, 185, 129, 0.0) 15%,
+    rgba(16, 185, 129, 0.20) 38%,
+    rgba(52, 211, 153, 0.16) 58%,
+    rgba(16, 185, 129, 0.0) 78%,
+    transparent 100%
+  );
+  animation: aurora-drift-2 24s ease-in-out infinite;
+  animation-delay: -6s;
 }
 
-.blob-3 {
-  top: 30%;
-  left: 45%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, #8B5CF6 0%, rgba(139, 92, 246, 0) 70%);
-  animation: floatBlob3 22s ease-in-out infinite alternate;
+/* Band 3 — Indigo / Purple, narrower, fast */
+.aurora-3 {
+  top: 40%;
+  height: 200px;
+  background: linear-gradient(
+    108deg,
+    transparent 0%,
+    rgba(99, 102, 241, 0.0) 20%,
+    rgba(139, 92, 246, 0.22) 42%,
+    rgba(167, 139, 250, 0.15) 60%,
+    rgba(99, 102, 241, 0.0) 78%,
+    transparent 100%
+  );
+  animation: aurora-drift-3 14s ease-in-out infinite;
+  animation-delay: -3s;
 }
 
-@keyframes floatBlob1 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(60px, 40px) scale(1.1); }
+/* Band 4 — Blue accent, thin shimmer at top */
+.aurora-4 {
+  top: -2%;
+  height: 180px;
+  background: linear-gradient(
+    95deg,
+    transparent 0%,
+    rgba(14, 165, 233, 0.0) 25%,
+    rgba(56, 189, 248, 0.18) 48%,
+    rgba(14, 165, 233, 0.12) 62%,
+    rgba(14, 165, 233, 0.0) 80%,
+    transparent 100%
+  );
+  animation: aurora-drift-4 20s ease-in-out infinite;
+  animation-delay: -10s;
 }
-@keyframes floatBlob2 {
-  0% { transform: translate(0, 0) scale(1.2); }
-  100% { transform: translate(-80px, -50px) scale(0.9); }
+
+/* Keyframes — each band shifts horizontally + vertically with slight scale */
+@keyframes aurora-drift-1 {
+  0%   { transform: translateX(0%)   translateY(0px)  scaleY(1);   opacity: 0.85; }
+  30%  { transform: translateX(8%)   translateY(18px) scaleY(1.06); opacity: 1; }
+  60%  { transform: translateX(-5%)  translateY(-8px) scaleY(0.95); opacity: 0.7; }
+  100% { transform: translateX(0%)   translateY(0px)  scaleY(1);   opacity: 0.85; }
 }
-@keyframes floatBlob3 {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(40px, -60px) rotate(120deg) scale(1.15); }
+@keyframes aurora-drift-2 {
+  0%   { transform: translateX(0%)   translateY(0px)  scaleY(1);   opacity: 0.6; }
+  25%  { transform: translateX(-10%) translateY(24px) scaleY(1.08); opacity: 0.9; }
+  55%  { transform: translateX(6%)   translateY(-12px) scaleY(0.94); opacity: 0.65; }
+  100% { transform: translateX(0%)   translateY(0px)  scaleY(1);   opacity: 0.6; }
+}
+@keyframes aurora-drift-3 {
+  0%   { transform: translateX(0%)   translateY(0px)  scaleY(1);   opacity: 0.75; }
+  40%  { transform: translateX(12%)  translateY(10px) scaleY(1.1);  opacity: 1; }
+  70%  { transform: translateX(-8%)  translateY(-18px) scaleY(0.9); opacity: 0.55; }
+  100% { transform: translateX(0%)   translateY(0px)  scaleY(1);   opacity: 0.75; }
+}
+@keyframes aurora-drift-4 {
+  0%   { transform: translateX(0%)   translateY(0px)  scaleY(1);   opacity: 0.7; }
+  35%  { transform: translateX(-6%)  translateY(14px) scaleY(1.05); opacity: 0.95; }
+  65%  { transform: translateX(9%)   translateY(-6px) scaleY(0.96); opacity: 0.6; }
+  100% { transform: translateX(0%)   translateY(0px)  scaleY(1);   opacity: 0.7; }
+}
+
+/* Reduced motion: freeze aurora */
+@media (prefers-reduced-motion: reduce) {
+  .aurora-band {
+    animation: none !important;
+  }
 }
 
 .hero-container {
