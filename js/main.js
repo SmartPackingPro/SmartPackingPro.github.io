@@ -26,6 +26,49 @@ document.addEventListener('DOMContentLoaded', () => {
   // Init state
   handleScroll();
 
+  // 2. Mobile Menu Toggle
+  const menuBtn  = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+
+  const iconOpen  = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line></svg>`;
+  const iconClose = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
+
+  function closeMenu() {
+    navbar.classList.remove('menu-open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.innerHTML = iconOpen;
+  }
+
+  function openMenu() {
+    navbar.classList.add('menu-open');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    menuBtn.innerHTML = iconClose;
+  }
+
+  if (menuBtn) {
+    menuBtn.setAttribute('aria-expanded', 'false');
+
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navbar.classList.contains('menu-open') ? closeMenu() : openMenu();
+    });
+
+    // Close when any nav link is tapped
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => closeMenu());
+    });
+
+    // Close when tapping outside the navbar
+    document.addEventListener('click', (e) => {
+      if (!navbar.contains(e.target)) closeMenu();
+    });
+
+    // Close on scroll (feels native)
+    window.addEventListener('scroll', () => {
+      if (navbar.classList.contains('menu-open')) closeMenu();
+    }, { passive: true });
+  }
+
   // 2. Scroll Reveal Animations (Intersection Observer)
   const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
   
