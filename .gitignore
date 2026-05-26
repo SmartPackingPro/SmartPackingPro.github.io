@@ -20,3 +20,10 @@ node_modules/
 
 # Internal planning & concept documents (local only)
 Concept/
+
+# Image assets — hosted on Cloudinary CDN, not in repo
+Android_Icons/
+Screenshots/
+
+# Helper scripts (local use only)
+update_cdn.ps1
