@@ -6,8 +6,6 @@
   Style: Motion-Driven + Glassmorphism (dark hero, light body sections)
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
-
 /* ==========================================================================
    CSS Variables (Design Tokens)
    ========================================================================== */
@@ -66,12 +64,22 @@ html {
 
 body {
   overflow-x: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+p, h1, h2, h3, h4, a, li, span {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  user-select: text;
 }
 
 a {
   text-decoration: none;
   color: inherit;
   transition: color var(--transition-normal);
+  pointer-events: auto;
 }
 
 ul {
@@ -82,6 +90,23 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  -webkit-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.logo,
+.play-store-badge,
+.footer-logo {
+  pointer-events: auto;
+}
+
+.logo img,
+.play-store-badge img,
+.footer-logo img {
+  pointer-events: auto;
 }
 
 button {

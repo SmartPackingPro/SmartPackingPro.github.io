@@ -3,6 +3,15 @@
  * Handles scroll reveal animations, sticky nav, and carousel logic.
  */
 
+// Frame busting guard - prevents embedding in third-party iframes
+if (window.self !== window.top) {
+  try {
+    window.top.location = window.self.location;
+  } catch (e) {
+    document.body.innerHTML = '';
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Sticky Navigation
   const navbar = document.querySelector('.navbar');
@@ -53,5 +62,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearElement = document.getElementById('current-year');
   if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
+  }
+
+  // 5. Image Protections (Disable Context Menu and Dragging)
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', e => e.preventDefault());
+    img.addEventListener('dragstart', e => e.preventDefault());
+  });
+
+  // 6. Contact Email Assembly (Obfuscation decryption)
+  const contactLink = document.getElementById('contact-link');
+  if (contactLink) {
+    const u = 'devloper';
+    const d = 'samartha';
+    const at = '@';
+    const host = 'gmail.com';
+    contactLink.href = 'mailto:' + u + d + at + host;
   }
 });

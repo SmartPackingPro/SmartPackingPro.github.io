@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Prevent direct indexing of raw asset directories
+Disallow: /Screenshots/
+Disallow: /Android_Icons/
+Disallow: /Concept/
+
 Sitemap: https://smartpackingpro.app/sitemap.xml
