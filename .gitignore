@@ -17,3 +17,6 @@ node_modules/
 
 # Logs
 *.log
+
+# Internal planning & concept documents (local only)
+Concept/
