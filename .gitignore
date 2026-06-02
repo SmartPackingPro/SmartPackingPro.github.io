@@ -23,6 +23,7 @@ update_cdn.ps1
 
 # Internal planning & concept documents (local only)
 Concept/
+AuditFindings.txt
 
 # Image assets — hosted on Cloudinary CDN, not in repo
 Android_Icons/
