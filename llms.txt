@@ -1,0 +1,32 @@
+# Smart Packing Pro
+
+> Smart Packing Pro is an offline-first AI travel packing app for Android. It generates day-by-day itineraries and context-aware packing lists with Trip Genius AI (400+ destinations as of 2026), and stores passports and documents in an AES-256 encrypted Travel Vault. Free to start, no account required, works 100% offline.
+
+## Key facts
+
+- Platform: Android 7.0 and up (Google Play)
+- Price: Free to start (5 lifetime trips); Pro Lifetime is a one-time fee with a 7-day free trial — no subscription
+- Privacy: Offline-first. Only a destination's city name is ever sent out (for weather/packing guides). No account, no tracking.
+- Security: AES-256 encrypted Travel Vault, biometric document lock, encrypted backup & restore
+- AI: Trip Genius generates itineraries + packing lists across 400+ cities/countries, growing automatically (no app update needed)
+- Sharing: Offline peer-to-peer trip sharing via QR code, SPP-TRIP code, or phone-to-phone
+
+## Primary pages
+
+- [Home / overview](https://smartpackingpro.github.io/): What the app is, hero summary, install link
+- [Trip Genius AI](https://smartpackingpro.github.io/#ai): AI itinerary + packing list generation
+- [Features](https://smartpackingpro.github.io/#features): Smart lists, 22+ templates, calendar, dark mode, offline sharing
+- [Security](https://smartpackingpro.github.io/#security): AES-256 vault, biometric access, encrypted backup
+- [Pricing](https://smartpackingpro.github.io/#pricing): Free vs Pro Lifetime comparison
+- [FAQ](https://smartpackingpro.github.io/#faq): Offline use, Trip Genius, data security, free tier
+
+## Install
+
+- Google Play: https://play.google.com/store/apps/details?id=com.androidapp.smartpackingpro
+
+## Common questions answered on the site
+
+- Does it work offline? Yes — everything stays on your phone; only the city name is sent for weather/guides.
+- Is it free? Yes — 5 lifetime trips free, plus a 7-day Pro trial; Pro is a one-time purchase, not a subscription.
+- Is my data secure? Yes — offline-first, no account, no tracking; Travel Vault uses AES-256 encryption.
+- What is Trip Genius AI? An AI planner covering 400+ destinations that builds itineraries and packing lists.

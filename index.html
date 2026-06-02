@@ -8,7 +8,7 @@
   <title>Smart Packing Pro — AI Travel Packing List App for Android</title>
   <meta name="description"
     content="Pack smarter with Smart Packing Pro. AI-powered packing lists, Trip Genius itinerary planning, encrypted Travel Vault. Free to start. 100% offline.">
-  <link rel="canonical" href="https://smartpackingpro.app/">
+  <link rel="canonical" href="https://smartpackingpro.github.io/">
 
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -25,6 +25,8 @@
   <meta property="og:description"
     content="AI packing lists, Trip Genius AI, Travel Vault encryption. Free 7-day Pro trial.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://smartpackingpro.github.io/">
+  <meta property="og:site_name" content="Smart Packing Pro">
   <meta property="og:image"
     content="https://res.cloudinary.com/de7i04m70/image/upload/v1779811471/spp-icons/Icon-xxxdpi-192x192.png">
   <meta property="og:image:width" content="192">
@@ -49,6 +51,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" crossorigin="anonymous">
 
+  <!-- Preload LCP hero image for faster mobile paint -->
+  <link rel="preload" as="image" fetchpriority="high"
+    href="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/0.Dashboard.jpg">
+
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Critical: hide desktop nav on mobile BEFORE external CSS paints (prevents flash) -->
@@ -72,17 +78,39 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "SoftwareApplication",
+        "@type": "Organization",
+        "@id": "https://smartpackingpro.github.io/#organization",
+        "name": "Smart Packing Pro",
+        "url": "https://smartpackingpro.github.io/",
+        "logo": "https://res.cloudinary.com/de7i04m70/image/upload/v1779811471/spp-icons/Icon-xxxdpi-192x192.png",
+        "description": "Maker of Smart Packing Pro, the offline-first AI travel packing app for Android.",
+        "sameAs": [
+          "https://play.google.com/store/apps/details?id=com.androidapp.smartpackingpro"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://smartpackingpro.github.io/#website",
+        "url": "https://smartpackingpro.github.io/",
+        "name": "Smart Packing Pro",
+        "publisher": { "@id": "https://smartpackingpro.github.io/#organization" }
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://smartpackingpro.github.io/#app",
         "name": "Smart Packing Pro",
         "applicationCategory": "TravelApplication",
-        "operatingSystem": "Android",
+        "operatingSystem": "Android 7.0 and up",
+        "publisher": { "@id": "https://smartpackingpro.github.io/#organization" },
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
+        "installUrl": "https://play.google.com/store/apps/details?id=com.androidapp.smartpackingpro",
         "url": "https://play.google.com/store/apps/details?id=com.androidapp.smartpackingpro",
-        "description": "AI-powered travel packing list app with Trip Genius itinerary planning, encrypted Travel Vault, and offline-first storage."
+        "featureList": "AI Trip Genius itinerary planning, 400+ destinations as of 2026, AES-256 encrypted Travel Vault, 22+ packing templates, 100% offline-first, biometric document lock, offline trip sharing",
+        "description": "Offline-first AI travel packing app for Android. Trip Genius generates day-by-day itineraries and context-aware packing lists across 400+ destinations (as of 2026), with an AES-256 encrypted Travel Vault for passports and documents. Free to start, no account required."
       },
       {
         "@type": "FAQPage",
@@ -169,6 +197,7 @@
     </div>
   </nav>
 
+  <main>
 
   <header class="hero-section section dark">
     <div class="hero-bg">
@@ -208,7 +237,8 @@
       <div class="hero-visual reveal reveal-right">
         <div class="phone-mockup float-device">
           <img src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/0.Dashboard.jpg"
-            alt="Smart Packing Pro Dashboard">
+            alt="Smart Packing Pro dashboard showing an AI-generated packing list" fetchpriority="high"
+            decoding="async">
         </div>
       </div>
     </div>
@@ -316,7 +346,8 @@
 
       <div class="mockup-wrapper reveal reveal-right">
         <img src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/1.Categories.jpg"
-          alt="Smart Packing Categories" class="phone-mockup"
+          alt="Smart Packing categories grouping items into clothes, documents and electronics" loading="lazy"
+          decoding="async" class="phone-mockup"
           style="margin: 0 auto; display: block; border-width: 6px; border-color: #f1f5f9;">
       </div>
     </div>
@@ -365,14 +396,14 @@
       <div class="stack-mockup reveal reveal-right">
         <img
           src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/6.NewTripCreation3_TripGenius0.jpg"
-          alt="Trip Genius Start" class="phone-mockup phone-1">
+          alt="Trip Genius Start" loading="lazy" decoding="async" class="phone-mockup phone-1">
         <img
           src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/9.NewTripCreation3_TripGenius1.jpg"
-          alt="Trip Genius Packing List" class="phone-mockup phone-2">
+          alt="Trip Genius Packing List" loading="lazy" decoding="async" class="phone-mockup phone-2">
 
         <img
           src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/11.NewTripCreation3_TripGenius2_Itineary.jpg"
-          alt="Trip Genius Itinerary" class="phone-mockup phone-3">
+          alt="Trip Genius Itinerary" loading="lazy" decoding="async" class="phone-mockup phone-3">
       </div>
     </div>
   </section>
@@ -408,7 +439,7 @@
           <div class="bento-image">
             <img
               src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/9.NewTripCreation3_TripGenius1.jpg"
-              alt="Packing List">
+              alt="Packing List" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -430,7 +461,7 @@
           <div class="bento-image">
             <img
               src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/5.NewTripCreation2.jpg"
-              alt="Templates">
+              alt="Templates" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -452,7 +483,7 @@
           <div class="bento-image">
             <img
               src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/20.AlwaysPackItem.jpg"
-              alt="Always Pack">
+              alt="Always Pack" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -475,7 +506,7 @@
           <div class="bento-image">
             <img
               src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/18.Trrip_Calendar.jpg"
-              alt="Calendar View">
+              alt="Calendar View" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -494,7 +525,7 @@
           </div>
           <div class="bento-image">
             <img src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/12.DarkMode.jpg"
-              alt="Dark Mode">
+              alt="Dark Mode" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -515,7 +546,7 @@
           </div>
           <div class="bento-image">
             <img src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/16.ShareOffline.jpg"
-              alt="Share">
+              alt="Share" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -534,42 +565,42 @@
 
         <div class="carousel-slide">
           <img src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/3.NewTripCreation.jpg"
-            alt="Create Trip" class="phone-mockup">
+            alt="Create Trip" loading="lazy" decoding="async" class="phone-mockup">
           <div class="carousel-caption">Quick Setup</div>
         </div>
 
         <div class="carousel-slide">
           <img
             src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/7.NewTripCreation3_TripGenius1.5.jpg"
-            alt="AI Generation" class="phone-mockup">
+            alt="AI Generation" loading="lazy" decoding="async" class="phone-mockup">
           <div class="carousel-caption">AI Generation</div>
         </div>
 
         <div class="carousel-slide">
           <img
             src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/8.NewTripCreation3_TripGenius1.6.jpg"
-            alt="Category Detail" class="phone-mockup">
+            alt="Category Detail" loading="lazy" decoding="async" class="phone-mockup">
           <div class="carousel-caption">Detailed Sorting</div>
         </div>
 
         <div class="carousel-slide">
           <img
             src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/10.NewTripCreation3_TripGenius2_CustomItineary.jpg"
-            alt="Custom Itinerary" class="phone-mockup">
+            alt="Custom Itinerary" loading="lazy" decoding="async" class="phone-mockup">
           <div class="carousel-caption">Custom Itinerary</div>
         </div>
 
         <div class="carousel-slide">
           <img
             src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/14.Travel_Vault_CustomisationDocuments.jpg"
-            alt="Vault Categories" class="phone-mockup">
+            alt="Vault Categories" loading="lazy" decoding="async" class="phone-mockup">
           <div class="carousel-caption">Document Categories</div>
         </div>
 
         <div class="carousel-slide">
           <img
             src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/19.DuplicateOrUseAsTemplateorDelete.jpg"
-            alt="Trip Management" class="phone-mockup">
+            alt="Trip Management" loading="lazy" decoding="async" class="phone-mockup">
           <div class="carousel-caption">Trip Management</div>
         </div>
       </div>
@@ -628,9 +659,9 @@
 
       <div class="security-images reveal">
         <img src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/13.Traval_Vault.jpg"
-          alt="Travel Vault" class="phone-mockup">
+          alt="Travel Vault" loading="lazy" decoding="async" class="phone-mockup">
         <img src="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/15.Backup_Restore.jpg"
-          alt="Backup & Restore" class="phone-mockup">
+          alt="Backup &amp; Restore document export between devices" loading="lazy" decoding="async" class="phone-mockup">
       </div>
     </div>
   </section>
@@ -719,6 +750,56 @@
           <a href="https://play.google.com/store/apps/details?id=com.androidapp.smartpackingpro&pcampaignid=web_share"
             class="btn btn-primary" target="_blank" rel="noopener">Start 7-Day Free Trial</a>
         </div>
+      </div>
+
+      <!-- Machine-digestible feature comparison table (AEO: agents parse tables faster than cards) -->
+      <div class="reveal" style="max-width: 720px; margin: 3rem auto 0; overflow-x: auto;">
+        <table
+          style="width: 100%; border-collapse: collapse; background: var(--bg-card-light); border-radius: 12px; overflow: hidden; font-size: 0.95rem; box-shadow: 0 4px 20px rgba(12,74,110,0.06);">
+          <caption class="text-small text-muted" style="caption-side: top; padding: 0 0 0.75rem; text-align: left;">
+            Smart Packing Pro — Free vs Pro Lifetime feature comparison (2026)</caption>
+          <thead>
+            <tr style="background: var(--primary); color: #fff;">
+              <th scope="col" style="text-align: left; padding: 0.85rem 1rem;">Feature</th>
+              <th scope="col" style="text-align: center; padding: 0.85rem 1rem;">Free</th>
+              <th scope="col" style="text-align: center; padding: 0.85rem 1rem;">Pro Lifetime</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-glass-light);">
+              <th scope="row" style="text-align: left; padding: 0.75rem 1rem; font-weight: 500;">Trips</th>
+              <td style="text-align: center; padding: 0.75rem 1rem;">5 (lifetime)</td>
+              <td style="text-align: center; padding: 0.75rem 1rem;">Unlimited</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-glass-light);">
+              <th scope="row" style="text-align: left; padding: 0.75rem 1rem; font-weight: 500;">Trip Genius AI sessions
+              </th>
+              <td style="text-align: center; padding: 0.75rem 1rem;">1</td>
+              <td style="text-align: center; padding: 0.75rem 1rem;">Unlimited</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-glass-light);">
+              <th scope="row" style="text-align: left; padding: 0.75rem 1rem; font-weight: 500;">Custom templates</th>
+              <td style="text-align: center; padding: 0.75rem 1rem;">3</td>
+              <td style="text-align: center; padding: 0.75rem 1rem;">Unlimited</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-glass-light);">
+              <th scope="row" style="text-align: left; padding: 0.75rem 1rem; font-weight: 500;">Travel Vault (AES-256)</th>
+              <td style="text-align: center; padding: 0.75rem 1rem;">—</td>
+              <td style="text-align: center; padding: 0.75rem 1rem; color: var(--green-success); font-weight: 600;">✓</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-glass-light);">
+              <th scope="row" style="text-align: left; padding: 0.75rem 1rem; font-weight: 500;">Encrypted backup &amp;
+                restore</th>
+              <td style="text-align: center; padding: 0.75rem 1rem;">—</td>
+              <td style="text-align: center; padding: 0.75rem 1rem; color: var(--green-success); font-weight: 600;">✓</td>
+            </tr>
+            <tr>
+              <th scope="row" style="text-align: left; padding: 0.75rem 1rem; font-weight: 500;">Price</th>
+              <td style="text-align: center; padding: 0.75rem 1rem;">$0 forever</td>
+              <td style="text-align: center; padding: 0.75rem 1rem;">One-time fee (7-day free trial)</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -868,6 +949,8 @@
     </div>
   </section>
 
+  </main>
+
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
@@ -915,7 +998,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 
 </html>
