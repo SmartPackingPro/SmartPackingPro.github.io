@@ -1,9 +1,38 @@
+# Smart Packing Pro — landing page crawler policy
+
+# Default: all classic crawlers allowed; raw asset dirs kept out of the index
 User-agent: *
 Allow: /
-
-# Prevent direct indexing of raw asset directories
 Disallow: /Screenshots/
 Disallow: /Android_Icons/
 Disallow: /Concept/
 
-Sitemap: https://smartpackingpro.app/sitemap.xml
+# AI answer engines / generative search — explicitly welcomed for citation visibility
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://smartpackingpro.github.io/sitemap.xml
