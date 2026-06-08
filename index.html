@@ -17,8 +17,8 @@
                  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
                  font-src https://fonts.gstatic.com;
                  img-src 'self' data: https:;
-                 script-src 'self';
-                 connect-src 'none';">
+                 script-src 'self' https://www.googletagmanager.com;
+                 connect-src https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://region1.google-analytics.com https://region1.analytics.google.com;">
   <meta name="copyright" content="© Smart Packing Pro. All Rights Reserved.">
 
   <meta property="og:title" content="Smart Packing Pro — Pack Smarter. Travel Lighter.">
@@ -54,6 +54,10 @@
   <!-- Preload LCP hero image for faster mobile paint -->
   <link rel="preload" as="image" fetchpriority="high"
     href="https://res.cloudinary.com/de7i04m70/image/upload/v1779811523/spp-screenshots/0.Dashboard.jpg">
+
+  <!-- Google Analytics 4 — landing page only, NOT the Android app -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S919FCNMTS"></script>
+  <script src="js/analytics.js"></script>
 
   <link rel="stylesheet" href="css/style.css">
 
