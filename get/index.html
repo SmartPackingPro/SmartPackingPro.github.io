@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Smart Packing Pro — Opening Play Store…</title>
   <meta name="robots" content="noindex, nofollow">
-  <script>
-    window.location.replace(
-      "https://play.google.com/store/apps/details?id=com.androidapp.smartpackingpro&pcampaignid=web_share"
-    );
-  </script>
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self';
+                 script-src 'self' https://www.googletagmanager.com;
+                 connect-src https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://region1.google-analytics.com https://region1.analytics.google.com https://www.googletagmanager.com;">
+
+  <!-- Google Analytics 4 — same property as the landing page -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S919FCNMTS"></script>
+  <script src="../js/get-redirect.js"></script>
 </head>
 <body>
   <p>Opening Play Store…</p>
