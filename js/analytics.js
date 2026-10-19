@@ -9,6 +9,16 @@ gtag('consent', 'default', {
   analytics_storage: sppChoice === 'granted' ? 'granted' : 'denied',
   ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'
 });
+// gtag.js is fetched only after the visitor accepts: no request to Google before consent.
+function sppLoadGtag() {
+  if (window.sppGtagLoaded) return;
+  window.sppGtagLoaded = true;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-S919FCNMTS';
+  document.head.appendChild(s);
+}
+if (sppChoice === 'granted') sppLoadGtag();
 gtag('js', new Date());
 gtag('config', 'G-S919FCNMTS', { allow_google_signals: false, allow_ad_personalization_signals: false });
 
@@ -23,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function choose(v) {
     try { localStorage.setItem(SPP_CONSENT_KEY, v); } catch (e) {}
     gtag('consent', 'update', { analytics_storage: v });
+    if (v === 'granted') sppLoadGtag();
     bar.remove();
   }
   [['Decline', 'denied', '#334155'], ['Accept', 'granted', '#38bdf8']].forEach(function (b) {
