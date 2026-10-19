@@ -6,7 +6,7 @@
 
 - Platform: Android 7.0 and up (Google Play)
 - Price: Free to start (5 lifetime trips); Pro Lifetime is a one-time fee with a 7-day free trial — no subscription
-- Privacy: Offline-first. Only a destination's city name is ever sent out (for weather/packing guides). No account, no tracking.
+- Privacy: Offline-first. Weather and destination lookup send the city name, destination coordinates and IP address to GeoNames and MET Norway. No account. Optional analytics/crash reports are off until you opt in.
 - Security: AES-256 encrypted Travel Vault, biometric document lock, encrypted backup & restore
 - AI: Trip Genius generates itineraries + packing lists across 400+ cities/countries, growing automatically (no app update needed)
 - Sharing: Offline peer-to-peer trip sharing via QR code, SPP-TRIP code, or phone-to-phone
@@ -26,7 +26,7 @@
 
 ## Common questions answered on the site
 
-- Does it work offline? Yes — everything stays on your phone; only the city name is sent for weather/guides.
+- Does it work offline? Yes for packing; weather and destination lookup need internet and share the city name, coordinates and IP address with GeoNames and MET Norway.
 - Is it free? Yes — 5 lifetime trips free, plus a 7-day Pro trial; Pro is a one-time purchase, not a subscription.
-- Is my data secure? Yes — offline-first, no account, no tracking; Travel Vault uses AES-256 encryption.
+- Is my data secure? Trips stay on your phone, no account is required, optional diagnostics are opt-in, and Travel Vault uses AES-256 encryption.
 - What is Trip Genius AI? An AI planner covering 400+ destinations that builds itineraries and packing lists.
