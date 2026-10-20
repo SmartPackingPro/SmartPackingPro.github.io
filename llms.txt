@@ -9,7 +9,7 @@
 - Privacy: Offline-first. Weather needs internet: version 4.4.1 uses Open-Meteo; version 4.5.2 and later use MET Norway (forecast) and GeoNames (destination search). Providers receive the city name or coordinates plus IP/network information. No account. From 4.5.2, optional analytics/crash reports are off until you opt in.
 - Security: AES-256 encrypted Travel Vault, biometric document lock, encrypted backup & restore
 - AI: Trip Genius generates itineraries + packing lists across 400+ cities/countries, growing automatically (no app update needed)
-- Sharing: Offline peer-to-peer trip sharing via QR code, SPP-TRIP code, or phone-to-phone
+- Sharing: Trip sharing via QR code, SPP-TRIP code or the share sheet
 
 ## Primary pages
 
